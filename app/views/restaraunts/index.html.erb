@@ -1,0 +1,11 @@
+<p>Find the best restaraunt nearby</p>
+
+<h2>Hello, today is <%= Time.now.strftime('%d/%m/%Y') %> </h2>
+
+<ul>
+	<% @categories.each { |category| %>
+		<li>
+			<%= category %>
+		</li>
+	<% } %>
+</ul>
