@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<p>Find the best restaraunt nearby</p>
+
+<h2>Hello, today is <%= Time.now.strftime('%d/%m/%Y') %> </h2>
+
+<p>
+	All our restaraunts <%= link_to 'here', restaraunts_path %>. 
+	Give us some <%= link_to 'feedback', feedback_path %>
+</p>
+
+<ul>
+	<% @categories.each { |category| %>
+		<li>
+			<%= category %>
+		</li>
+	<% } %>
+</ul>
+<p>What do you want to eat?</p>
+<form action="/restaraunts" method="get">
+	<input type="text" name="food_type" placeholder="What kind of food do you like" >
+	<input type="submit">
+</form>
+
+
+<p>Add new restaurant</p>
+<form action="/restaraunts" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<input type="text" name="name">
+	<input type="text" name="address">
+	<input type="submit">
+</form>

@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def home
+	@categories = %w(pizza starbacks chifan)			
   end
 end

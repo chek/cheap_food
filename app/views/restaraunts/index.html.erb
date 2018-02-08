@@ -1,11 +1,9 @@
-<p>Find the best restaraunt nearby</p>
-
-<h2>Hello, today is <%= Time.now.strftime('%d/%m/%Y') %> </h2>
+<p>Found <%= @restaraunts.count %> available restaraunts</p>
 
 <ul>
-	<% @categories.each { |category| %>
+	<% @restaraunts.each { |restaraunt| %>
 		<li>
-			<%= category %>
+			<%= restaraunt[:name] %> (<%= restaraunt[:address] %>) / <%= restaraunt[:category] %>
 		</li>
 	<% } %>
 </ul>
